@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../css/form_add_product.css';
-import Alerta from '../components/Alerta'
+import Alerta from '../components/Alerta';
 import axios from 'axios';
-
 
 function CreatePedido(props) {
   const { productoEditado, onEditSuccess } = props;
@@ -10,58 +9,60 @@ function CreatePedido(props) {
   // Use the initial product values to populate the fields
   const [nombre, setNombre] = useState(productoEditado.nombre);
   const [precio, setPrecio] = useState(productoEditado.precio);
+  const [cantidad, setCantidad] = useState(productoEditado.cantidad);
   const [cliente, setCliente] = useState('');
   const [direccion, setDireccion] = useState('');
   const [alerta, setAlerta] = useState({});
+  const [total, setTotal] = useState(precio * cantidad);
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  useEffect(() => {
+    setTotal(precio * cantidad);
+  }, [precio, cantidad]);
 
-  const requestData = {
-    nombre,
-    precio,
-    cliente,
-    direccion,
-    
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const requestData = {
+      nombre,
+      precio,
+      cantidad,
+      cliente,
+      direccion,
+      total, // Incluye el total en la solicitud
+    };
+
+    try {
+      const response = await axios.post('http://localhost:7777/api/pedidos', requestData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      setAlerta({
+        msg: 'Pedido Realizado',
+        error: false,
+      });
+
+      setCliente('');
+      setDireccion('');
+
+      // Para cerrar la ventana modal
+      // onEditSuccess();
+    } catch (error) {
+      console.error(error);
+      console.error('Error Response:', error.response);
+
+      setAlerta({
+        msg: 'No se puede crear el pedido',
+        error: true,
+      });
+    }
   };
 
-  try {
-    //console.log('Request Payload:', requestData);
-
-    const response = await axios.post('http://localhost:7777/api/pedidos', requestData, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-
-    setAlerta({
-      msg: 'Pedido Realizado',
-      // msg: response.msg,
-      error: false
-    })
-
-  
-    setCliente('');
-    setDireccion('');
-
-    //Para cerrar la ventana modal
-    //onEditSuccess();
-
-  } catch (error) {
-    console.error(error);
-    console.error('Error Response:', error.response);
-
-    setAlerta({
-      msg: 'No se puede crear el pedido',
-      error: true,
-    });
-  }
-}
-const { msg } = alerta
+  const { msg } = alerta;
   return (
     <>
-      { msg && <Alerta alerta={alerta} />}
+      {msg && <Alerta alerta={alerta} />}
       <div className="container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="flex">
@@ -94,6 +95,21 @@ const { msg } = alerta
               />
               <span>Precio</span>
             </label>
+
+            <label>
+              <input
+                className="input"
+                type="number"
+                id="cantidad"
+                name="cantidad"
+                value={cantidad}
+                onChange={(e) => setCantidad(e.target.value)}
+                required
+                disabled={true} // Deshabilitado ya que viene predefinido
+                style={{ backgroundColor: '#f0f0f0' }}
+              />
+              <span>Cantidad</span>
+            </label>
           </div>
 
           <label>
@@ -122,7 +138,9 @@ const { msg } = alerta
             <span>Direccion</span>
           </label>
 
-         
+          <div className="total">
+            <h3>Total: ${total}</h3>
+          </div>
 
           <button className="submit">Confirmar</button>
         </form>

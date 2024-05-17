@@ -80,13 +80,13 @@ const Home = () => {
       <Contenedor>
 
       
-      {data.map((producto, index) => (
+      {data?.length > 0 && data.slice(0, 3).map( item => (
         <CardP
-          key={index}
-          title={producto.nombre}
-          price={producto.precio}
-          imagen={producto.imagen}
-          enlace={producto._id}
+          key={item._id}
+          title={item.nombre}
+          price={item.precio}
+          imagen={item.imagen}
+          enlace={item._id}
         />
       ))}
       

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from "./components/Home"
 import Product from "./components/Products"
 import Contact from "./components/Contact"
+import Menu from  "./components/Menu"
 import Login from "./components/Login"
 import Footer from "./components/Footer"
 import Register from "./components/Register"
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path='/about' component={AboutUs} exact>
             <AboutUs/>
+          </Route>
+          <Route path='/menu' component={Menu} exact>
+            <Menu />
           </Route>
           <Route path='/contact' component={Contact} exact>
             <Contact />

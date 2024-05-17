@@ -50,21 +50,6 @@ const ProductView = ({ match }) => {
     setIsModalOpen(false);
   };
 
-  const handleCreatePedido = async () => {
-    if (productToEdit) {
-      try {
-        const response = await axios.post('http://localhost:7777/api/pedidos', {
-          productId: productToEdit._id,
-          quantity: quantity,
-        });
-        console.log('Pedido creado:', response.data);
-        closeModal();
-      } catch (error) {
-        console.error('Error al crear pedido:', error);
-      }
-    }
-  };
-
   return (
     <>
       {data && (
@@ -83,14 +68,7 @@ const ProductView = ({ match }) => {
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2>Validar pedido</h2>
           <br />
-          <CreatePedido productoEditado={productToEdit} />
-          <br />
-          <label>
-            Cantidad: {quantity}
-          </label>
-          <br />
-          <button onClick={handleCreatePedido}>Crear Pedido</button>
-          <br />
+          <CreatePedido productoEditado={{ ...productToEdit, cantidad: quantity }} />
           <button className='close-button' onClick={closeModal}>
             X
           </button>

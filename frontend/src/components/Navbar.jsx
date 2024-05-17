@@ -67,6 +67,9 @@ function Navbar() {
         <Link to="/" className="home">
           <li>Inicio</li>
         </Link>
+        <Link to="/menu" className="home">
+          <li>Menu</li>
+        </Link>
         {userRol === 'admin' && (
           <Link to="/product" className="services">
             <li>Crear Productos</li>

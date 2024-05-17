@@ -19,6 +19,19 @@ const pedidoSchema = mongoose.Schema({
         required: true,
         trim: true,
     },
+    cantidad: { // Nueva columna para la cantidad
+        type: Number,
+        required: true,
+        default: 1,
+    },
+    total: { // Nueva columna para el total
+        type: Number,
+        required: true,
+    },
+    
+    
+    
+    
 }, {
     timestamps: true,
 });

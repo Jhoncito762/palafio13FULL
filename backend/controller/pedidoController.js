@@ -3,21 +3,25 @@ import Pedido from '../models/Pedido.js'; // Asegúrate de que la ruta sea corre
 // Controlador para crear un nuevo pedido
 const crearPedido = async (req, res) => {
     try {
-        const { nombre, precio, cliente, direccion } = req.body;
+        const { nombre, precio, cantidad, cliente, direccion } = req.body; // Asegúrate de desestructurar cantidad también
+        const total = precio * cantidad; // Calcula el total
         const nuevoPedido = new Pedido({
             nombre,
             precio,
+            cantidad,
             cliente,
-            direccion
+            direccion,
+            total // Incluye el total aquí si decides agregar la columna al esquema
         });
         const pedidoGuardado = await nuevoPedido.save();
-        const mensaje = 'Pedido creado con exito';
-        return res.status(201).json({ msg: mensaje });
+        const mensaje = 'Pedido creado con éxito';
+        return res.status(201).json({ msg: mensaje, pedido: pedidoGuardado });
     } catch (error) {
         console.log(error); // Imprimir los errores
         res.status(500).json({ error: "Error al crear el pedido" });
     }
 };
+
 
 // Controlador para obtener todos los pedidos
 const obtenerPedido = async (req, res) => {
@@ -53,7 +57,6 @@ const actualizarPedido = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: "Error al actualizar el pedido" });
     }
-    
 };
 
 // Controlador para eliminar un pedido por su número (ID)
@@ -68,7 +71,6 @@ const eliminarPedido = async (req, res) => {
         res.status(500).json({ mensaje: "Error al eliminar el pedido" });
     }
 };
-
 
 export {
     crearPedido,

@@ -140,7 +140,7 @@ const CardProductView = (props) => {
         <br />
         <div className="quantity-controls">
           <button onClick={decreaseQuantity}>-</button>
-          <span>{props.quantity}</span>
+          <span className='mx-4'>{props.quantity}</span>
           <button onClick={increaseQuantity}>+</button>
         </div>
         <br />
