@@ -1,0 +1,91 @@
+/* Estilos para la sección de Compras */
+
+/* Contenedor principal */
+.div_principal {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Títulos */
+  h2, h3 {
+    color: #333;
+  }
+  
+  /* Formulario de selección de método de pago */
+  label, select {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Sección de datos de la tarjeta */
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  label, input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Sección de datos de envío */
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  /* Botón "Pidelo Ya" */
+  .button_pedir {
+    background-color: #000000;
+    color: #fff;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button_pedir:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Estilo para la imagen del producto */
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: rgb(77, 4, 4);
+  }
+  

@@ -1,0 +1,144 @@
+.agregar{
+  display: flex;
+  grid-gap: 2%;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.button_suma{
+  width: 5%;
+  height: 5%;
+  text-align: center; /* Centra el contenido horizontalmente */
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.button_suma:hover{
+  border-radius: 5px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.button_resta{
+  width: 5%;
+  height: 5%;
+  text-align: center; /* Centra el contenido horizontalmente */
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.button_resta:hover{
+  border-radius: 5px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.button_pedir{
+  background-color: black;
+  color: #FFFFFF;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  transition: transform 0.8s;
+  justify-content: center;
+}
+
+.button_pedir:hover{
+  background-color: #FFFFFF;
+  color: #000000;
+  transform: scale(1.2);
+}
+
+.imgbox {
+  float: center;
+  text-align: center;
+  width: 378px;
+  border: 1px solid #000000;
+  margin: 4px;
+  padding: 6px;
+  border-radius: 1em;
+  transition: transform 0.8s;
+}
+
+.imgbox:hover {
+  transform: scale(1.05);
+}
+
+
+.imgbox img{
+  width: 250px;
+  transition: transform 2.0s;
+}
+
+.imgbox img:hover{
+  transform: scale(1.4);
+}
+
+#button2{
+  width: 40%;
+  height: 30px;
+  border: 1px solid#000000;
+  background-color: #000000;
+
+}
+
+
+ol {
+  text-align: justify;
+
+}
+
+.imgbox2 {
+  float: center;
+  text-align: center;
+  width: 378px;
+  border: 1px solid #000000;
+  margin: 4px;
+  padding: 6px;
+  background-color: #f5d20b;
+  border-radius: 1em;
+  transition: transform 0.8s;
+}
+
+.imgbox2:hover {
+  transform: scale(1.05);
+}
+
+.num_contador{
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 4%;
+}
+
+.imgbox2 img{
+  width: 250px;
+  transition: transform 2.0s;
+}
+
+.imgbox2 img:hover{
+  transform: scale(1.4);
+}
+
+@media screen and (max-width: 1160px) {
+
+}
+@media screen and (max-width: 950px) {
+
+}
+@media screen and (max-width: 768px) {
+ 
+}

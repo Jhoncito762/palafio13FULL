@@ -1,0 +1,34 @@
+.contenedor {
+    width: 100%;
+    background-image: url("https://montearroyo.co/wp-content/uploads/2018/08/empanadas-empanada-entrada-comida-restaurante-campestre-2018-menu-restaurant-country.jpg   ");
+    padding: 250px 100px;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.contenedor:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+.contenedor h1 {
+	font-size: 60px;
+	color: #ffffff;
+	position: relative;
+}
+
+.contenedor h3 {
+	font-size: 30px;
+	color: #ffffff;
+	position: relative;
+}

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #ffffff;
+  font-family: 'Bebas Neue', 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#miBoton.button_login {
+  background-color: #751111;
+  color: white;
+}
+
+#miBoton.button_login:hover{
+  background-color: #460202;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #FFFFFF;
+  transition: 0.6s ease-in-out;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.nav.active {
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.157);
+  background-color: transparent;
+}
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+  margin-top: 15px;
+}
+
+.nav-links li {
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.hero {
+  text-align: center;
+  margin-top: 15%;
+}
+.hero h1 {
+  text-align: center;
+  font-size: 80px;
+  margin: 150px;
+}
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  font-family: 'Bebas Neue';
+  height: 40px;
+  line-height: 43px;
+  margin: 3px;
+  padding: 0px 22px;
+  display: flex;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #3d2514;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-links li:hover {
+  background-color: #751111;
+  color: #ffffff;
+  box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+  transition: all ease 0.2s;
+}
+
+#btn1 {
+  display: none;
+}
+@media (max-width: 768px) {
+  #btn1 {
+    display: inline; 
+    margin-top: 1%;
+
+  }
+  .logo {
+    display: block; 
+    position: static; 
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links-mobile {
+    position: absolute;
+    list-style: none;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background-color: white;
+    font-size: 24px;
+    padding: 15px 20px;
+    z-index: 1001; 
+  }  
+  
+  .nav-links-mobile li:hover {
+    background-color: #bf2222;
+    color: #ffffff;
+    box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+    transition: all ease 0.1s;
+  }
+  
+  .nav-links-mobile li:hover {
+    background-color: #bf2222;
+    color: #ffffff;
+    box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+    transition: all ease 0.1s;
+  }
+  ul li {
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+  }
+  #miBoton.button_login {
+    margin-left: 45%; 
+  }
+  .mobile-menu-icon {
+    position: absolute;
+    display: block;
+    right: 20px;
+    margin-top: 15%;
+    background-color: #ffffff;
+  }
+  .hero h1 {
+    width: 100%;
+    font-size: 30px;
+    margin: 0 auto 200px;
+  }
+  
+}
